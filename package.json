@@ -1,0 +1,31 @@
+{
+  "name": "semono",
+  "version": "0.0.1",
+  "description": "A Serial Monitor written with Node.js",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarceloFariaz/Semono.git"
+  },
+  "keywords": [
+    "Serial",
+    "Monitor",
+    "Node",
+    "Node.js",
+    "node-serialport",
+    "serialport"
+  ],
+  "author": "MarceloFariaz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MarceloFariaz/Semono/issues"
+  },
+  "homepage": "https://github.com/MarceloFariaz/Semono#readme",
+  "devDependencies": {
+    "electron": "^1.7.10",
+    "serialport": "^6.0.4"
+  }
+}

@@ -1,0 +1,41 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Semono</title>
+  <script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+  <div>
+    <div>
+      <label>Semono</label>
+      <input type="button"
+      id="btnSettings"
+      value="Settings">
+      <input type="button"
+      id="btnOpenClose"
+      value="Open">
+    </div>
+    <pre id="data" style="border:solid; border-width:1px;">
+    </pre>
+    <div>
+      <input type="text"
+      placeholder="Type data to send..."
+      id="dataToSend" >
+      <input type="button"
+      id="btnSend"
+      value="Send">
+    </div>
+  </div>
+  <script type="text/javascript">
+    var remote = require('electron').remote;
+    document.addEventListener('keydown', function (e) {
+      if (e.which === 123) {
+        remote.getCurrentWindow().webContents.openDevTools();
+      } else if (e.which === 116) {
+        location.reload();
+      }
+    });
+  </script>
+</body>
+</html>
