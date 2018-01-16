@@ -1,18 +1,22 @@
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <title>Settings</title>
+  <link rel="stylesheet" href="../assets/css/settings.css">
 </head>
 <body>
   <div>
+    <h1>Settings</h1>
     <div>
-      <h2>Port</h2>
-      <select name="serialPorts">
+      <label>COM Port:</label><br>
+      <select name="settings_serial" id="serial_port">
+        <option value"COM4">Com unknown</option>
       </select>
     </div>
     <div>
-    <h2>Baud</h2>
-      <select name="baudRate">
+      <label>Baud Rate:</label><br>
+      <select name="settings_serial" id="baud_rate"><br>
         <option value="300">300</option>
         <option value="1200">1200</option>
         <option value="2400">2400</option>
@@ -24,7 +28,13 @@
         <option value="115200">115200</option>
       </select>
     </div>
+    <div>
+      <input type="button"
+      id="btnReturn"
+      value="Return">
+    </div>
   </div>
+  <script src="settings.js"></script>
   <script type="text/javascript">
     var remote = require('electron').remote;
     document.addEventListener('keydown', function (e) {

@@ -6,23 +6,42 @@ const url = require('url')
 // Keep a global reference so the garbage collector does not destroy our app
 let mainWindow
 
+var menuTemplate = [
+  {
+    label: 'Menu',
+    submenu: [
+      {type: 'separator'},
+      {
+        label:'Exit',
+        click() {
+          app.quit()
+        }
+      }
+    ]
+  },
+  {
+    label: 'Info',
+  }
+]
+
 function createWindow () {
 
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 1280,
-    height: 720
+    width: 800,
+    height: 600
   })
 
   // Load the index.html file
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
+    pathname: path.join(__dirname, 'src/index.html'),
     protocol: 'file:',
     slashes: true
   }))
 
   // Set up the menu
-  mainWindow.setMenu(null)
+  var menu = Menu.buildFromTemplate(menuTemplate)
+  Menu.setApplicationMenu(menu)
 
 }
 
